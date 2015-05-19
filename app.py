@@ -5,6 +5,12 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     return '<h1>E-Library</h1> <p>Un paragraphe</p>'
+    
+
+@app.route('/hello')
+def hello():
+    return '<h1>Salut, tout le monde</h1> <p><a href="/">Retour à la page d\'accueil</a></p>'
+    
 
 
 if __name__ == '__main__':
