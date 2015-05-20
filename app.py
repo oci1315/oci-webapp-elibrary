@@ -24,7 +24,20 @@ def index():
 def hello(name='Anonyme'):
     return render_template('hello.html', name=name)
     
+@app.route('/erreur')
+def erreur():
+    # erreur volontaire
+    a = 3 / 0
 
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'), 404
+
+
+@app.errorhandler(500)
+def internal_server_error(e):
+    return render_template('500.html'), 500
 
 
 
