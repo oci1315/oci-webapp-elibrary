@@ -7,8 +7,9 @@ def index():
     return '<h1>E-Library</h1> <p>Un paragraphe</p>'
     
 
+@app.route('/hello')
 @app.route('/hello/<name>')
-def hello(name):
+def hello(name='Anonyme'):
     return '<h1>Salut, {}</h1> <p><a href="/">Retour à la page d\'accueil</a></p>'.format(name)
     
 
