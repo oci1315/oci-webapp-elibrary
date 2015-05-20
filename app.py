@@ -17,7 +17,7 @@ bootstrap = Bootstrap(app)
 @app.route('/')
 def index():
     return render_template('index.html')
-    
+
 
 @app.route('/hello')
 @app.route('/hello/<name>')
@@ -30,6 +30,19 @@ def erreur():
     a = 3 / 0
 
 
+@app.route('/demo')
+def demo_templates():
+    booleen = False
+    montagnes = ['Moléson', 'Vanil Noir', 'Dent de Broc']
+    pays = {'Suisse' : 'Bern', 'France' : 'Paris'}
+
+    return render_template('demo-jinja2.html', 
+        booleen=booleen,
+        montagnes=montagnes,
+        pays=pays
+    )
+
+
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template('404.html'), 404
@@ -38,7 +51,6 @@ def page_not_found(e):
 @app.errorhandler(500)
 def internal_server_error(e):
     return render_template('500.html'), 500
-
 
 
 if __name__ == '__main__':

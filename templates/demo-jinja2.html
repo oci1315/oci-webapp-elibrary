@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}Démo du langage de template Jinja2{% endblock %}
+
+{% block page_content %}
+<div class="page-header">
+    <h1>Démo du langage de template Jinja2</h1>
+</div>
+
+<h2>Parcours de listes</h2>
+
+Voici des montages célèbres de la Gruyère
+
+<ul>
+{% for montagne in montagnes %}
+    <li class="montagne">{{ montagne }}</li>
+{% endfor %}
+</ul>
+
+<h2>Parcours de dictionnaires</h2>
+
+Voici quelques pays avec leur capitale
+
+<table class="table table-responsive table-condensed">
+    <thead>
+        <tr>
+            <th>Pays</th>
+            <th>Capitale</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for p in pays.keys() %}
+        <tr>
+            <td>{{ p }}</td>
+            <td>{{ pays[p] }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<h2>Affichage conditionnel</h2>
+
+{% if booleen %}
+    <p>Le booléen est vrai</p>
+{% else %}
+    <p>Le booléen est faux</p>
+{% endif %}
+    
+
+{% endblock %}
