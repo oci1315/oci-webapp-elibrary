@@ -11,7 +11,7 @@ Pour installer l'application Web, il faut entrer les commandes suivantes qui ont
 $ sudo pip3 install virtualenv
 $ git clone https://github.com/oci1315/oci-webapp-elibrary.git
 $ virtualenv-3.4 venv
-$ source activate venv/bin/activate
+$ source venv/bin/activate
 $ cd oci-webapp-elibrary
 $ pip install -r requirements.txt
 
